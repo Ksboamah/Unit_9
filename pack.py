@@ -1,4 +1,3 @@
-import dog
 
 class Pack:
 
@@ -10,3 +9,6 @@ class Pack:
 
     def get_leader_name(self):
         return self.members[self.leader_index].get_name()
+
+    def add_members(self, dog):
+
