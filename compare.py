@@ -1,11 +1,12 @@
 import deck
+import card
 
 
 def deal_cards(my_deck):
     comp_deck = []
     for x in range(5):
         comp_deck.append(my_deck.deal())
-    return comp_deck
+        return comp_deck
 
 
 def compare_cards(player_1, player_2):
@@ -15,15 +16,15 @@ def compare_cards(player_1, player_2):
         return False
 
 
-def points_saver(round, holder, comp_holder):
-    if round == True:
+def points_saver(game_round, holder, comp_holder):
+    if game_round == True:
         holder.append("point")
     else:
         comp_holder.append("point")
 
 
-def determine_winner(player_1, player_2):
-    if len(player_1) > len(player_2):
+def determine_winner(holder, comp_holder):
+    if len(holder) > len(comp_holder):
         print("Player 1 wins the game.")
     else:
         print("Player 2 wins the game.")
@@ -38,6 +39,6 @@ def main():
     holder = []
     comp_holder = []
     points_saver(game_round, holder, comp_holder)
-    determine_winner(player_1, player_2)
+    determine_winner(holder, comp_holder)
 
 main()
